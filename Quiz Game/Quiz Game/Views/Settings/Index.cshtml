@@ -1,0 +1,26 @@
+﻿@model Quiz_Game.Models.SettingsModel
+@{
+    ViewBag.Title = " | Settings";
+}
+<div class="div-quiz-settings">
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div>
+        Game Mode
+        @Html.DropDownListFor(x => x.Value, Quiz_Game.Helpers.Util.GameModes(true), new { @class = "dd-game-mode" })
+    </div>
+    <div class="div-submit-settings">
+        <input type="submit" class="bnt btn-primary form-control" value="Save" />
+    </div>
+}
+</div>
+<!-- set active button ( game / settings ) and remove the div afterwards -->
+<div class="div-script">
+    <script>
+        $(document).ready(function () {
+            $('.div-settings').addClass('active');
+            $('.div-script').remove();
+        });
+    </script>
+</div>

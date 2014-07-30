@@ -1,0 +1,54 @@
+﻿@model Quiz_Game.Models.QuizModel
+@{
+    ViewBag.Title = "";
+}
+<div class="div-wsi">Who Said It?</div>
+<div class="question-window">
+    <!-- display Quote -->
+    &quot;@Model.QuoteText&quot;
+</div>
+<div class="text-center">
+    <!-- loop through all answers and display then -->
+    @foreach (Quiz_Game.Models.Answer a in Model.Answers)
+    {
+        if (Model.GameMode == 1)
+        {
+            <!-- special style if game mode is with more than one answer -->
+            <div class="div-answer multi-answer btn-answer" aid="@a.AnswerID" qid="@a.QuoteID">-> @a.AnswerText</div>
+        }
+        else if (Model.GameMode == 0)
+        {
+            <div class="div-answer">@a.AnswerText<span>?</span></div>
+            <!-- display Yes / No buttons if game mode is basic -->
+            <div class="div-buttons">
+                <input type="button" class="btn-yes btn btn-answer" value="Yes" correct="1" aid="@a.AnswerID" qid="@a.QuoteID" />
+                <input type="button" class="btn-no btn btn-answer" value="No" correct="0" aid="@a.AnswerID" qid="@a.QuoteID" />
+            </div>
+        }
+    }
+</div>
+<div class="modal fade" id="modalResult">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">Quiz Result</h4>
+      </div>
+      <div class="modal-body">
+        <p id="modal-text"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Next</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- set active button ( game / settings ) and remove the div afterwards -->
+<div class="div-script">
+    <script>
+        $(document).ready(function () {
+            $('.div-quiz').addClass('active');
+            $('.div-script').remove();
+        });
+    </script>
+</div>

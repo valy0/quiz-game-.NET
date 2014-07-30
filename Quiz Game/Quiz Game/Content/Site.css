@@ -1,0 +1,100 @@
+﻿body {
+    font-family: Helvetica;
+}
+.div-game {
+    border: 2px solid black;
+    width: 300px;
+    height: 350px;
+    position: absolute;
+}
+.question-window {
+    background-color: #fc358c;
+    margin: 10px;
+    padding: 15px;
+    width: 275px;
+    border-radius: 10px;
+    color: white;
+    font-size: 12pt;
+}
+.div-nav {
+    text-align: center;
+    width: 148px;
+    height: 40px;
+    float: left;
+    cursor: pointer;
+    background-color: #848484;
+    color: white;
+    padding-top: 10px;
+}
+.div-nav:hover {
+    background-color: black;
+}
+.active {
+    background-color: black;
+    cursor: default !important;
+}
+.div-wsi {
+    font-size: 12pt;
+    padding-left: 10px;
+    margin-top: 50px;
+}
+.multi-answer {
+    background-color: #636563;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    width: 200px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+.div-buttons {
+    position: absolute;
+    bottom: 10px;
+}
+.btn-yes {
+    background-color: #6da039;
+    margin-left: 10px;
+    float: left;
+}
+.btn-no {
+    background-color: #fc2c47;
+    margin-left: 182px;
+    float: right;
+}
+.btn {
+    color: white !important;
+}
+.div-quiz-settings {
+    margin-left: 10px;
+    margin-top: 50px;
+}
+.div-add-quote {
+    margin-top: 15px;   
+}
+.div-submit-settings {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+.div-submit-settings input {
+    width: 275px;
+}
+.div-answer {
+    margin-top: 5px;
+}
+.txt-quote {
+    resize: none;
+    width: 250px;
+    height: 50px;
+}
+label {
+    font-weight: normal !important;
+    margin-left: 20px;
+}
+.div-answer input[type="text"] {
+    width: 250px;
+}
